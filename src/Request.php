@@ -9,8 +9,8 @@ class Request
 	 /**
      * Get DataTable Request
      *  
-     * @param  String $requestName
-     * @return String|Array
+     * @param  string $requestName
+     * @return string|array
      */
 
 
@@ -20,7 +20,7 @@ class Request
         if($requestName !== NULL)
     	   return $request->getGetPost($requestName);
         
-        return (Object) (($request->getMethod() == 'GET') ? $request->getGet() : $request->getPost());
+        return (Object) ((strtolower($request->getMethod()) == 'get') ? $request->getGet() : $request->getPost());
 
     }
 
